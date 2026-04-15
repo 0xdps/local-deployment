@@ -1,0 +1,25 @@
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+services/backend/node_modules/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Docker
+*.pid
+
+# Temp test dirs
+tmp-stack/
+tmp-test/

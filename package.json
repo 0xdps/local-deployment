@@ -1,0 +1,45 @@
+{
+  "name": "letstack",
+  "version": "0.1.0",
+  "description": "CLI for bootstrapping and validating local multi-service deployment setups",
+  "type": "module",
+  "bin": {
+    "letstack": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "scaffold",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepare": "npm run build",
+    "dev": "tsc -w -p tsconfig.json",
+    "test:doctor": "node dist/cli.js doctor .",
+    "test:smoke": "node dist/cli.js smoke .",
+    "test:validate": "node dist/cli.js validate .",
+    "test:generate": "node dist/cli.js generate ."
+  },
+  "keywords": [
+    "docker",
+    "docker-compose",
+    "local-development",
+    "cli",
+    "templates",
+    "devops"
+  ],
+  "author": "0xdps",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3"
+  }
+}

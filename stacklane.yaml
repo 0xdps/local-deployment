@@ -1,0 +1,30 @@
+project:
+  name: stacklane-starter
+  edgePort: 8090
+
+services:
+  backend:
+    enabled: true
+    buildContext: ./services/backend
+    dockerfile: Dockerfile
+    devTarget: dev
+    prodTarget: prod
+    internalPort: 3000
+    healthPath: /health
+
+  frontend:
+    enabled: true
+    buildContext: ./services/frontend
+    dockerfile: Dockerfile
+    internalPort: 80
+
+  admin:
+    enabled: true
+    buildContext: ./services/admin
+    dockerfile: Dockerfile
+    routePrefix: /admin
+    internalPort: 80
+
+routing:
+  apiPrefix: /api
+  healthPath: /health

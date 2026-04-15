@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./services/backend
+      target: dev
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./services/backend/src:/app/src
+      - ./services/backend/package.json:/app/package.json:ro
+      - backend-node-modules:/app/node_modules
+
+  frontend:
+    volumes:
+      - ./services/frontend/public:/usr/share/nginx/html:ro
+
+  admin:
+    volumes:
+      - ./services/admin/public:/usr/share/nginx/html:ro
+
+volumes:
+  backend-node-modules:
